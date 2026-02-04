@@ -10,3 +10,5 @@ cwd = "./"
 
 [build.upload]
 format = "modules"
+[env.production]
+vars = { ENVIRONMENT = "production" }
