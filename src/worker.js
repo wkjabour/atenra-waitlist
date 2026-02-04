@@ -16,32 +16,22 @@ export default {
         return new Response('Invalid JSON', { status: 400 });
       }
 
-      const SENDGRID_API_KEY = env.SENDGRID_API_KEY;
-      if (!SENDGRID_API_KEY) {
-        // If no API key configured, still return success so frontend can fallback to mailto if needed.
-        return new Response(JSON.stringify({ ok: false, error: 'Missing SENDGRID_API_KEY' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+      const RESEND_API_KEY = env.RESEND_API_KEY;
+      if (!RESEND_API_KEY) {
+        return new Response(JSON.stringify({ ok: false, error: 'Missing RESEND_API_KEY' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
       }
 
       const body = {
-        personalizations: [
-          {
-            to: [{ email: 'contact@atenra.com' }],
-            subject: `Atenra waitlist: ${data.name || data.email || 'new signup'}`,
-          },
-        ],
-        from: { email: 'no-reply@atenra.com', name: 'Atenra Waitlist' },
-        content: [
-          {
-            type: 'text/plain',
-            value: formatEmailBody(data),
-          },
-        ],
+        from: 'Atenra <no-reply@atenra.com>',
+        to: ['contact@atenra.com'],
+        subject: `Atenra waitlist: ${data.name || data.email || 'new signup'}`,
+        text: formatEmailBody(data),
       };
 
-      const res = await fetch('https://api.sendgrid.com/v3/mail/send', {
+      const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${SENDGRID_API_KEY}`,
+          Authorization: `Bearer ${RESEND_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
