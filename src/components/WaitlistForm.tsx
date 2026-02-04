@@ -74,15 +74,21 @@ export const WaitlistForm = ({ userType }: WaitlistFormProps) => {
         setIsSubmitted(true);
         toast({ title: "You're on the list!", description: "We'll notify you when Atenra launches." });
       } else {
-        // Fallback to mailto when server endpoint is unavailable or returns error
-        openMailClientFallback();
-        toast({ title: "Opened email client", description: "Please send the pre-filled email to contact@atenra.com." });
+        const errorData = await res.json().catch(() => ({}));
+        console.error('[Form] Server error:', res.status, errorData);
+        toast({
+          title: "Error submitting",
+          description: errorData.error || `Server error: ${res.status}`,
+          variant: "destructive",
+        });
       }
     } catch (err) {
-      // Network error -> fallback to mailto
       console.error('[Form] Fetch error:', err);
-      openMailClientFallback();
-      toast({ title: "Opened email client", description: "Please send the pre-filled email to contact@atenra.com." });
+      toast({
+        title: "Connection error",
+        description: "Could not reach the server. Please try again.",
+        variant: "destructive",
+      });
     }
 
     setIsSubmitting(false);
@@ -197,6 +203,16 @@ export const WaitlistForm = ({ userType }: WaitlistFormProps) => {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </span>
         )}
+      </Button>
+
+      <Button
+        type="button"
+        variant="outline"
+        className="w-full h-10 sm:h-12 text-sm sm:text-base"
+        onClick={openMailClientFallback}
+      >
+        <Mail className="w-4 h-4 mr-2" />
+        Email directly
       </Button>
     </form>
   );
