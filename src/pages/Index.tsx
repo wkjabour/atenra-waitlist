@@ -13,7 +13,7 @@ const Index = () => {
 
   const emailSubject = encodeURIComponent("Atenra Waitlist Interest");
   const emailBody = encodeURIComponent(
-    "Hi Atenra Team,\n\nI'm interested in joining the waitlist for Atenra.\n\nName:\nBusiness Name (if applicable):\nPhone:\n\nPlease add me to your list!\n\nBest regards"
+    "Hi Team Atenra ,\n\nI'm interested in joining the waitlist for Atenra's pre-launch.\n\nName:\nBusiness Name (if applicable):\nPhone:\n\ I would appreciate if you would add me to your list!\n\nRegards"
   );
 
   const industries = [

@@ -4,7 +4,7 @@ A modern, responsive waitlist application for Atenra - Your Personal & Business 
 
 ## Overview
 
-This application provides a beautiful, mobile-optimized waitlist signup form for both clients and business partners. Form submissions are sent directly to `contact@atenra.com` via mailto links, enabling easy integration with any email provider.
+This application provides a mobile-optimized waitlist signup form for both clients and business partners. Form submissions are sent directly to `contact@atenra.com` via mailto links, enabling easy integration with any email provider.
 
 ## Features
 
