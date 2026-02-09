@@ -17,9 +17,9 @@ const Index = () => {
   );
 
   const industries = [
-    { icon: Home, name: "Home & Maintenance", services: "Plumbing, Electrical, Carpentry, Landscaping, Renovation" },
-    { icon: Truck, name: "Logistics & Transport", services: "Moving, Courier, Freight, Auto Transport, Storage" },
-    { icon: Heart, name: "Wellness & Health", services: "Fitness, Therapy, Nutrition, Home Care, Spa & Recovery" },
+    { icon: Home, name: "Home & Maintenance", services: "Roofing, Windows, Plumbing, Electrical, Carpentry, Landscaping, Renovations" },
+    { icon: Truck, name: "Transport", services: "Rideshare, Food Deliver, Freight, Vehichle Transport" },
+    { icon: Heart, name: "Personal", services: "Fitness, Therapy, Nutrition, Home Care, Spa & Recovery" },
     { icon: Briefcase, name: "Professional Services", services: "Accounting, Legal, Consulting, Marketing, Admin Support" },
     { icon: Code, name: "Tech & Creative", services: "Web Development, Design, Photography, IT Services, Software" },
   ];
@@ -98,23 +98,23 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="text-center p-4 sm:p-6 rounded-xl bg-muted/30">
               <Users className="w-6 h-6 mx-auto mb-2 text-muted-foreground" />
-              <p className="font-semibold text-lg">1000+</p>
+              <p className="font-semibold text-lg">1,000+</p>
               <p className="text-sm text-muted-foreground">Verified Professionals</p>
             </div>
             <div className="text-center p-4 sm:p-6 rounded-xl bg-muted/30">
               <Building className="w-6 h-6 mx-auto mb-2 text-muted-foreground" />
-              <p className="font-semibold text-lg">20+</p>
-              <p className="text-sm text-muted-foreground">Service Categories</p>
+              <p className="font-semibold text-lg">+40</p>
+              <p className="text-sm text-muted-foreground">Local Businesses</p>
             </div>
             <div className="text-center p-4 sm:p-6 rounded-xl bg-muted/30">
               <Shield className="w-6 h-6 mx-auto mb-2 text-muted-foreground" />
               <p className="font-semibold text-lg">100%</p>
-              <p className="text-sm text-muted-foreground">Hand-Verified</p>
+              <p className="text-sm text-muted-foreground">Guaranteed Data Security</p>
             </div>
             <div className="text-center p-4 sm:p-6 rounded-xl bg-muted/30">
               <Zap className="w-6 h-6 mx-auto mb-2 text-muted-foreground" />
               <p className="font-semibold text-lg">24/7</p>
-              <p className="text-sm text-muted-foreground">Support Ready</p>
+              <p className="text-sm text-muted-foreground">Support Available: For Beta Launch </p>
             </div>
           </div>
         </div>
